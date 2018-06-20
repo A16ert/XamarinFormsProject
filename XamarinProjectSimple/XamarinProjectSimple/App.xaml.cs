@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using XamarinProjectSimple.Views;
 using Xamarin.Forms.Xaml;
+using XamarinProjectSimple.Views.Authorization;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace XamarinProjectSimple
@@ -14,7 +15,7 @@ namespace XamarinProjectSimple
 			InitializeComponent();
 
 
-			MainPage = new MainPage();
+			MainPage = new AuthPage();
 		}
 
 		protected override void OnStart ()
