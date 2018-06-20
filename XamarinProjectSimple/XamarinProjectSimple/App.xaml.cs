@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using XamarinProjectSimple.Views;
 using Xamarin.Forms.Xaml;
 using XamarinProjectSimple.Views.Authorization;
+using XamarinProjectSimple.Services.Authorization;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace XamarinProjectSimple
@@ -14,8 +15,11 @@ namespace XamarinProjectSimple
 		{
 			InitializeComponent();
 
+            IAuthService auth = new AuthService();
 
-			MainPage = new AuthPage();
+            if (auth.IsAuthorized) MainPage = new MainPage();
+
+            else MainPage = new AuthPage();
 		}
 
 		protected override void OnStart ()
