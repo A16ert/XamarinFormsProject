@@ -10,14 +10,17 @@ namespace XamarinProjectSimple
 {
 	public partial class App : Application
 	{
-		
-		public App ()
+        public static Application CurrentApp { get; private set; }
+
+        public App ()
 		{
+            CurrentApp = this;
+
 			InitializeComponent();
 
             IAuthService auth = new AuthService();
 
-            if (auth.IsAuthorized) MainPage = new MainPage();
+            if (auth.IsAuthorized) GoToRoot();
 
             else MainPage = new AuthPage();
 		}
@@ -36,5 +39,16 @@ namespace XamarinProjectSimple
 		{
 			// Handle when your app resumes
 		}
-	}
+
+        public static void GoToRoot()
+        {
+            CurrentApp.MainPage = new MainPage();
+        }
+
+        public static void GoToRegistration()
+        {
+            CurrentApp.MainPage = new RegistrationPage();
+        }
+
+    }
 }

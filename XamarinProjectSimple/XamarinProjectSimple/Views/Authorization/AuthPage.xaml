@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:XamarinProjectSimple.ViewModels.Authorization"
              x:Class="XamarinProjectSimple.Views.Authorization.AuthPage">
+    <ContentPage.BindingContext>
+        <viewModel:AuthViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -12,24 +16,25 @@
 
             <StackLayout Grid.Row="0"
                          HorizontalOptions="Center" VerticalOptions="Center">
-                <Entry />
-                <Entry/>
+                <Entry Text="{Binding PhoneNumber}"/>
+                <Entry Text="{Binding Code}"/>
             </StackLayout>
 
             <StackLayout Grid.Row="1"
                          VerticalOptions="StartAndExpand" HorizontalOptions="Center">
                 <Label Text="На указанный вами номер придёт смс-сообщение с кодом подтверждение"/>
 
-                <Button Text="Войти"/>
+                <Button Text="Войти" Command="{Binding EnterCommand}"/>
 
                 <Label Text="Войти через соц.сеть:"/>
 
-                <Button Text="Регистрация"/>
+                <Button x:Name="RegistrationButton"  Text="Регистрация" Clicked="RegistrationButton_Clicked"/>
             </StackLayout>
 
             <StackLayout Grid.Row="2"
                          VerticalOptions="Center" HorizontalOptions="Center">
-                <Button Text="Пропустить"/>
+                <Button x:Name="SkipAuthButton" Clicked="SkipAuthButton_Clicked" 
+                        Text="Пропустить"/>
                 <Label Text="Если вы продолжите без регистрации, то ваши карты лояльности невозможно будет 
                        восстановить после удаления приложения или смены устройства"/>
             </StackLayout>

@@ -4,10 +4,10 @@
             xmlns:views="clr-namespace:XamarinProjectSimple.Views"
             x:Class="XamarinProjectSimple.Views.MainPage">
     <TabbedPage.Children>
-        <NavigationPage Title="Browse">
+        <NavigationPage Title="Магазин">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
+                    <On Platform="iOS" Value="1"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -15,10 +15,43 @@
             </x:Arguments>
         </NavigationPage>
         
-        <NavigationPage Title="About">
+        <NavigationPage Title="Мои карты">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png"/>
+                    <On Platform="iOS" Value="2"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="QR">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="3"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Диалоги">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="4"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Уведомления">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="5"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>

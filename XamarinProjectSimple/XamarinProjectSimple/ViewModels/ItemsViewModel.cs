@@ -17,7 +17,7 @@ namespace XamarinProjectSimple.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Магазин";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

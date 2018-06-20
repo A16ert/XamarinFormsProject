@@ -16,5 +16,15 @@ namespace XamarinProjectSimple.Views.Authorization
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void RegistrationButton_Clicked(object sender, EventArgs e)
+        {
+            App.GoToRegistration();
+        }
+
+        private void SkipAuthButton_Clicked(object sender, EventArgs e)
+        {
+            App.GoToRoot();
+        }
+    }
 }

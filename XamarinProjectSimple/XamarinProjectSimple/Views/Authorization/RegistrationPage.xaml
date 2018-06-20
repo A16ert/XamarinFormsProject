@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:XamarinProjectSimple.ViewModels.Authorization"
+             xmlns:control="clr-namespace:XamarinProjectSimple.Controls"
              x:Class="XamarinProjectSimple.Views.Authorization.RegistrationPage">
+    <ContentPage.BindingContext>
+        <viewModel:RegistrationViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -24,12 +29,13 @@
                 <Picker/>
                 
                 <Entry Text="Email"/>
-
+                <control:RadioGroup x:Name="SexRadioGroup" Orientation="Horizontal"
+                                    ItemsSource="{Binding SexDictionary.Values}"/>
                 <Frame>
                     <StackLayout>
                         <Label Text="При регистрации вы подтверждаете своё согласие
                                     с условиями пользовательского соглашения"/>
-                        <Button Text="ДАЛЕЕ"/>
+                        <Button Text="ДАЛЕЕ" Command="{Binding RegistrCommand}"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>
