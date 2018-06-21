@@ -19,12 +19,15 @@ namespace XamarinProjectSimple.Views.Authorization
 
         private void RegistrationButton_Clicked(object sender, EventArgs e)
         {
-            App.GoToRegistration();
+            OpenRegistrationPage();
         }
 
         private void SkipAuthButton_Clicked(object sender, EventArgs e)
         {
             App.GoToRoot();
         }
+
+        private async void OpenRegistrationPage()
+            => await Navigation.PushAsync(new RegistrationPage());
     }
 }

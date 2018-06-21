@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinProjectSimple.ViewModels.Authorization;
 
 namespace XamarinProjectSimple.Views.Authorization
 {
@@ -15,6 +16,13 @@ namespace XamarinProjectSimple.Views.Authorization
 		public RegistrationPage ()
 		{
 			InitializeComponent ();
+
+            var viewModel = this.BindingContext as RegistrationViewModel;
+
+            viewModel.RegisterIsSuccsess += async () =>
+            {
+                await Navigation.PushAsync(new EnteringCodePage());
+            };
 		}
 	}
 }

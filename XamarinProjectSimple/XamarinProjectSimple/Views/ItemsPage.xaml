@@ -30,7 +30,7 @@
                                         LineBreakMode="NoWrap"
                                         Style="{DynamicResource ListItemDetailTextStyle}"
                                         FontSize="13" />
-                                <BoxView Color="Yellow" HeightRequest="200"/>
+                                <BoxView Color="Yellow" HeightRequest="250"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

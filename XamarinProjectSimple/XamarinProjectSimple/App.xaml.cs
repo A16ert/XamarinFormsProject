@@ -22,7 +22,7 @@ namespace XamarinProjectSimple
 
             if (auth.IsAuthorized) GoToRoot();
 
-            else MainPage = new AuthPage();
+            else MainPage = new NavigationPage(new AuthPage());
 		}
 
 		protected override void OnStart ()
@@ -43,11 +43,6 @@ namespace XamarinProjectSimple
         public static void GoToRoot()
         {
             CurrentApp.MainPage = new MainPage();
-        }
-
-        public static void GoToRegistration()
-        {
-            CurrentApp.MainPage = new RegistrationPage();
         }
 
     }

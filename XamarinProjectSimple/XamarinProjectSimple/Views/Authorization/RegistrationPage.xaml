@@ -35,7 +35,7 @@
                     <StackLayout>
                         <Label Text="При регистрации вы подтверждаете своё согласие
                                     с условиями пользовательского соглашения"/>
-                        <Button Text="ДАЛЕЕ" Command="{Binding RegistrCommand}"/>
+                        <Button Text="ДАЛЕЕ" Command="{Binding RegisterCommand, Mode=OneWay}"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>
