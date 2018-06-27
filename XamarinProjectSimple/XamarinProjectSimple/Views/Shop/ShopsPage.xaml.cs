@@ -17,24 +17,7 @@ namespace XamarinProjectSimple.Views.Shop
         public ShopsPage()
         {
             InitializeComponent();
-            var imagesList = new List<ImageModel>()
-            {
-                new ImageModel(Color.Orange),
-                new ImageModel(Color.Bisque),
-                new ImageModel(Color.Blue),
-                new ImageModel(Color.Green),
-            };
-
-            MyListView.ItemsSource = new ObservableCollection<ShopModel>()
-            {
-                new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),
-                new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),
-                new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),
-                new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),
-                new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),
-                new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),
-                new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList)
-            };
+            
         }
     }
 }
