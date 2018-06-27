@@ -35,7 +35,7 @@ namespace XamarinProjectSimple.ViewModels.Authorization
 
         public AuthViewModel()
         {
-            _authSerivce = new AuthService();
+            _authSerivce = DependencyService.Get<IAuthService>();
 
             EnterCommand = new Command(Enter);
         }

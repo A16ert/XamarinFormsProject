@@ -18,7 +18,7 @@ namespace XamarinProjectSimple
 
 			InitializeComponent();
 
-            IAuthService auth = new AuthService();
+            IAuthService auth = DependencyService.Get<IAuthService>();
 
             if (auth.IsAuthorized) GoToRoot();
 

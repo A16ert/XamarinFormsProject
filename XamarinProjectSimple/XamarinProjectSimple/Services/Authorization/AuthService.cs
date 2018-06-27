@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
-using XamarinProjectSimple.Services.Authorization;
+﻿using XamarinProjectSimple.Services.Authorization;
 
-//[assembly: Dependency(typeof(AuthService))]
-
+[assembly: Xamarin.Forms.Dependency(typeof(AuthService))]
 namespace XamarinProjectSimple.Services.Authorization
 {
     public class AuthService : IAuthService
