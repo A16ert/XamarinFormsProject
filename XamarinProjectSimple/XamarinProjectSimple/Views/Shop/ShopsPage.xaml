@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="XamarinProjectSimple.Views.Shop.ShopsPage">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="CarouselTemplate">
+            <StackLayout HeightRequest="400">
+                <BoxView HeightRequest="375" Color="{Binding ColorValue}"/>
+            </StackLayout>
+        </DataTemplate>
+        <DataTemplate x:Key="ShopsListTemplate">
+            <ViewCell>
+                <StackLayout HeightRequest="500" Padding="10">
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView Color="Blue"/>
+                        <Label Text="{Binding Name}" 
+                                           LineBreakMode="NoWrap" 
+                                           FontSize="16" />
+                    </StackLayout>
+                    <Label Text="{Binding Description}" 
+                                        LineBreakMode="NoWrap"
+                                        FontSize="13" />
+                    <carousel:CarouselViewControl HeightRequest="400" ShowIndicators="True"
+                                                  ItemTemplate="{StaticResource CarouselTemplate}" ItemsSource="{Binding ImagesList}"/>
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <ListView x:Name="MyListView" HasUnevenRows="True" ItemTemplate="{StaticResource ShopsListTemplate}"/>
+</ContentPage>
