@@ -3,6 +3,7 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:views="clr-namespace:XamarinProjectSimple.Views"
             xmlns:shop="clr-namespace:XamarinProjectSimple.Views.Shop"
+            xmlns:dialogs="clr-namespace:XamarinProjectSimple.Views.Dialogs"
             x:Class="XamarinProjectSimple.Views.MainPage">
     <TabbedPage.Children>
         <NavigationPage Title="Магазин">
@@ -23,7 +24,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:AboutPage />
+                <dialogs:DialogsPage />
             </x:Arguments>
         </NavigationPage>
 

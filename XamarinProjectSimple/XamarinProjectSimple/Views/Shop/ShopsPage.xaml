@@ -3,11 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:XamarinProjectSimple.ViewModels.Shop"
              xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             Title="Магазин"
              x:Class="XamarinProjectSimple.Views.Shop.ShopsPage">
     <ContentPage.BindingContext>
         <vm:ShopsViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Resources>
+        <Style x:Key="CircleFrame" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+        </Style>
         <DataTemplate x:Key="CarouselTemplate">
             <StackLayout HeightRequest="400">
                 <BoxView HeightRequest="375" Color="{Binding ColorValue}"/>
@@ -17,17 +24,18 @@
             <ViewCell>
                 <StackLayout HeightRequest="500" Padding="10">
                     <StackLayout Orientation="Horizontal">
-                        <BoxView Color="Blue"/>
-                        <Label Text="{Binding Name}" 
-                                           LineBreakMode="NoWrap" 
-                                           FontSize="16" />
+                        <Frame Style="{StaticResource CircleFrame}" BackgroundColor="Green"
+                                   HeightRequest="50" WidthRequest="50"/>
+                        <Label Text="{Binding Name}" VerticalOptions="Center"
+                                               LineBreakMode="NoWrap" 
+                                               FontSize="16" />
                     </StackLayout>
                     <Label Text="{Binding Description}" 
-                                        LineBreakMode="NoWrap"
-                                        FontSize="13" />
+                                            LineBreakMode="NoWrap"
+                                            FontSize="13" />
                     <carousel:CarouselViewControl HeightRequest="400" ShowIndicators="True"
-                                                  ItemTemplate="{StaticResource CarouselTemplate}"
-                                                  ItemsSource="{Binding ImagesList}"/>
+                                                      ItemTemplate="{StaticResource CarouselTemplate}"
+                                                      ItemsSource="{Binding ImagesList}"/>
                 </StackLayout>
             </ViewCell>
         </DataTemplate>

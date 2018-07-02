@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinProjectSimple.Views.Dialogs.DialogsPage"
+             Title="Диалоги">
+    <ContentPage.Resources>
+        <Style x:Key="CircleFrame" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="30"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="BorderColor" Value="Transparent"/>
+        </Style>
+    </ContentPage.Resources>
+    <ListView x:Name="DialogsListView" HasUnevenRows="True"
+                ItemTapped="DialogsListView_ItemTapped"
+              CachingStrategy="RecycleElement">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell Height="120" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.023*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.023*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="7"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Column="1" Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.157*"/>
+                                <ColumnDefinition Width="0.56*"/>
+                                <ColumnDefinition Width="0.276*"/>
+                            </Grid.ColumnDefinitions>
+                            <!--avatar-->
+                            <Frame Style="{StaticResource CircleFrame}" BackgroundColor="Green"
+                                   HeightRequest="60" WidthRequest="60" 
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center"/>
+                            <!--message info-->
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                
+                                <Label Text="{Binding Name}" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding LastMessage}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Grid>
+
+                            <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                    <Label Text="{Binding Date}"/>
+                                    <Frame Style="{StaticResource CircleFrame}" BackgroundColor="Green"
+                                           HeightRequest="20" WidthRequest="20" 
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center">
+                                        <Label Text="0" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Frame>
+                                </StackLayout>
+
+                                <!--<Button BackgroundColor="Transparent" BorderColor="Transparent" Text=">" FontSize="Large"/>-->
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                    
+
+                    <!--<StackLayout Orientation="Horizontal">
+                        <Frame CornerRadius="90" BackgroundColor="Green"/>
+                        <StackLayout >
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Date}"/>
+                            </StackLayout>
+                            <Label Text="{Binding LastMessage}"/>
+                        </StackLayout>
+                    </StackLayout>-->
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinProjectSimple.Views.Dialogs.DialogDetailPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="MyListView"
+            ItemsSource="{Binding Items}"
+              HasUnevenRows="True"
+            SeparatorColor="Transparent"
+            CachingStrategy="RecycleElement">
+            <!--Built in Cells-->
+            <!--<ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding .}" />
+        </DataTemplate>
+    </ListView.ItemTemplate>-->
+
+            <!--Custom View Cells-->
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="7">
+                            <Frame.Triggers>
+                                <DataTrigger TargetType="Frame" Binding="{Binding IsMyMessage}" Value="True">
+                                    <Setter Property="BackgroundColor" Value="Gray" />
+                                    <Setter Property="BorderColor" Value="Transparent"/>
+                                </DataTrigger>
+
+                                <DataTrigger TargetType="Frame" Binding="{Binding IsMyMessage}" Value="False">
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                    <Setter Property="BorderColor" Value="Black"/>
+                                </DataTrigger>
+                            </Frame.Triggers>
+                            <StackLayout>
+
+                                <Label Text="{Binding Text}" 
+                                        Style="{DynamicResource ListItemTextStyle}" />
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Grid.Row="1">
+            <BoxView HeightRequest="1" BackgroundColor="Gray"/>
+            <Grid HeightRequest="80">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Entry Grid.Column="0"/>
+                    <Button x:Name="SendBtn" Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>
