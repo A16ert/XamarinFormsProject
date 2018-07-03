@@ -1,14 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinProjectSimple.Views.Dialogs.DialogDetailPage">
+             xmlns:viewModel="clr-namespace:XamarinProjectSimple.ViewModels.Dialogs"
+             x:Class="XamarinProjectSimple.Views.Dialogs.DialogDetailPage"
+             Title="{Binding CompanionName}">
+    <ContentPage.BindingContext>
+        <viewModel:DialogDetailViewModel/>
+    </ContentPage.BindingContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="90*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
+            ItemsSource="{Binding MessagesList}"
               HasUnevenRows="True"
             SeparatorColor="Transparent"
             CachingStrategy="RecycleElement">
@@ -54,8 +59,8 @@
                         <ColumnDefinition Width="20*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Entry Grid.Column="0"/>
-                    <Button x:Name="SendBtn" Grid.Column="1"/>
+                    <Entry Grid.Column="0" Text="{Binding NewMessage}"/>
+                <Button x:Name="SendBtn" Grid.Column="1" Command="{Binding SendMessageCommand}"/>
             </Grid>
         </StackLayout>
     </Grid>

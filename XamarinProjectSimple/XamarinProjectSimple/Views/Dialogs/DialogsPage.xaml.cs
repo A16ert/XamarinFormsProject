@@ -16,12 +16,6 @@ namespace XamarinProjectSimple.Views.Dialogs
         public DialogsPage()
         {
             InitializeComponent();
-            DialogsListView.ItemsSource = new ObservableCollection<DialogShortModel>()
-            {
-                new DialogShortModel() { Name = "mergen", LastMessage = "Ваша скидка увеличилась", Date = "19.09.2017"},
-                new DialogShortModel() { Name = "ООО Тест", LastMessage = "Ваша скидка увеличилась", Date = "21.09.2017"},
-                new DialogShortModel() { Name = "Тесе2", LastMessage = "Ваша скидка увеличилась", Date = "19.09.2017"}
-            };
         }
 
         private async void DialogsListView_ItemTapped(object sender, ItemTappedEventArgs e)

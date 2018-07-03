@@ -6,16 +6,28 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XamarinProjectSimple.Models.DialogModels;
 
-namespace XamarinProjectSimple.Views.Dialogs
+namespace XamarinProjectSimple.Views.Cards
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DialogDetailPage : ContentPage
+    public partial class CardsPage : ContentPage
     {
-        public DialogDetailPage()
+        public ObservableCollection<string> Items { get; set; }
+
+        public CardsPage()
         {
             InitializeComponent();
+
+            Items = new ObservableCollection<string>
+            {
+                "Item 1",
+                "Item 2",
+                "Item 3",
+                "Item 4",
+                "Item 5"
+            };
+			
+			MyListView.ItemsSource = Items;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)

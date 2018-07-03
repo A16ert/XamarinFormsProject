@@ -4,6 +4,7 @@
             xmlns:views="clr-namespace:XamarinProjectSimple.Views"
             xmlns:shop="clr-namespace:XamarinProjectSimple.Views.Shop"
             xmlns:dialogs="clr-namespace:XamarinProjectSimple.Views.Dialogs"
+            xmlns:cards="clr-namespace:XamarinProjectSimple.Views.Cards"
             x:Class="XamarinProjectSimple.Views.MainPage">
     <TabbedPage.Children>
         <NavigationPage Title="Магазин">
@@ -24,7 +25,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <dialogs:DialogsPage />
+                <cards:CardsPage/>
             </x:Arguments>
         </NavigationPage>
 
@@ -46,7 +47,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:AboutPage />
+                <dialogs:DialogsPage />
             </x:Arguments>
         </NavigationPage>
 
