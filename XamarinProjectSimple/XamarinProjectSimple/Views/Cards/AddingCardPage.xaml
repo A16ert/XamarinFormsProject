@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cards="clr-namespace:XamarinProjectSimple.ViewModels.Cards"
+             x:Class="XamarinProjectSimple.Views.Cards.AddingCardPage"
+             Title="Добавить карту">
+    <ContentPage.BindingContext>
+        <cards:AddingCardViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="150*"/>
+                <RowDefinition Height="870*"/>
+            </Grid.RowDefinitions>
+            <!--search bar-->
+            <StackLayout>
+                <SearchBar x:Name="searchBar"
+                       Placeholder="Поиск" PlaceholderColor="#999999"
+                       BackgroundColor="#dcdcdc"
+                       Margin="16,8"
+                       HeightRequest="25"/>
+                <BoxView HeightRequest="1" BackgroundColor="#a0a0a0"/>
+            </StackLayout>
+            <!--adding Btn-->
+            <StackLayout Grid.Row="1">
+                <StackLayout Orientation="Horizontal" Margin="15, 36, 0, 8">
+                    <Button HeightRequest="29" WidthRequest="42"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center" VerticalOptions="Center"
+                        BorderColor="#007aff" BorderRadius="7"
+                        BorderWidth="2"
+                        Text="+" FontSize="10" TextColor="#007aff"/>
+                    <Label Text="Добавить другую карту" FontSize="15"
+                       HorizontalOptions="Center" VerticalOptions="Center"
+                       Margin="10,0"/>
+                </StackLayout>
+                <BoxView HeightRequest="1" BackgroundColor="#a0a0a0"/>
+            </StackLayout>
+
+            <ListView Grid.Row="2" x:Name="CardsListView"
+                  ItemsSource="{Binding CardsList}"
+                  IsGroupingEnabled="True"
+                  GroupDisplayBinding="{Binding FirstLetter}"
+                  Margin="8, 0"
+                  HasUnevenRows="True"
+                  CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="Black" BorderColor="Transparent" OutlineColor="Transparent"
+                                       HorizontalOptions="Center" VerticalOptions="Center"
+                                       HeightRequest="25" WidthRequest="50"
+                                       CornerRadius="5"/>
+                                <Label Text="{Binding Name}" Margin="8,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <!--<StackLayout>
+            <SearchBar x:Name="searchBar"
+                       Placeholder="Поиск" PlaceholderColor="#999999"
+                       BackgroundColor="#dcdcdc"
+                       Margin="16,8"
+                       HeightRequest="25"/>
+            <BoxView HeightRequest="1" BackgroundColor="#a0a0a0"/>
+            <StackLayout Orientation="Horizontal" Margin="15, 36, 0, 8">
+                <Button HeightRequest="29" WidthRequest="42"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center" VerticalOptions="Center"
+                        BorderColor="#007aff" BorderRadius="7"
+                        BorderWidth="2"
+                        Text="+" FontSize="10" TextColor="#007aff"/>
+                <Label Text="Добавить другую карту" FontSize="15"
+                       HorizontalOptions="Center" VerticalOptions="Center"
+                       Margin="10,0"/>
+            </StackLayout>
+            <BoxView HeightRequest="1" BackgroundColor="#a0a0a0"/>
+        </StackLayout>-->
+    </ContentPage.Content>
+</ContentPage>

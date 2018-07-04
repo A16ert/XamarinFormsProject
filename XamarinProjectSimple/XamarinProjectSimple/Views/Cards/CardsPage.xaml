@@ -1,51 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented"
+             xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials"
+             xmlns:vm="clr-namespace:XamarinProjectSimple.ViewModels.Cards"
              x:Class="XamarinProjectSimple.Views.Cards.CardsPage"
              Title="Мои карты">
+    <ContentPage.BindingContext>
+        <vm:CardsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddCard_Clicked" Icon="add_card_icon.png"/>
+    </ContentPage.ToolbarItems>
     <StackLayout>
-        <!--<control:SegmentedControl x:Name="SegmentedControl" 
-                            SelectedSegment="{Binding SegmentSelection}" 
-                            OnSegmentSelected="SegmentedControl_OnValueChanged" 
-                            TintColor="BlueViolet"
-                            SelectedTextColor="White"
-                            DisabledColor="Gray"
-                            Margin="8,8,8,8">
-            <control:SegmentedControl.Children>
-                <control:SegmentedControlOption Text="Item 1"/>
-                <control:SegmentedControlOption Text="Item 2"/>
-                <control:SegmentedControlOption Text="Item 3"/>
-                <control:SegmentedControlOption Text="Item 4"/>
-            </control:SegmentedControl.Children>
-        </control:SegmentedControl>-->
+        <fe:SegmentedButtonGroup OnColor="Red" OffColor="White"
+                                 SelectedIndex="{Binding SelectedFilterIndex}"
+                                 Margin="15, 8" CornerRadius="5"
+                                 HeightRequest="20">
+            <fe:SegmentedButtonGroup.LabelStyle>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="12" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                </Style>
+            </fe:SegmentedButtonGroup.LabelStyle>
+            <fe:SegmentedButtonGroup.SegmentedButtons>
+                <fe:SegmentedButton Title="по полезности"/>
+                <fe:SegmentedButton Title="по дате"/>
+            </fe:SegmentedButtonGroup.SegmentedButtons>
+        </fe:SegmentedButtonGroup>
         <ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
-
-            <!--Built in Cells-->
+                  ItemsSource="{Binding CardsList}"
+                  IsGroupingEnabled="True"
+                  GroupDisplayBinding="{Binding FirstLetter}"
+                  Margin="8, 0"
+                  HasUnevenRows="True"
+                  SeparatorColor="Transparent"
+                  ItemTapped="Handle_ItemTapped"
+                  CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding .}" />
+                    <ViewCell>
+                        <Frame BackgroundColor="Gray" BorderColor="Transparent" OutlineColor="Transparent" HeightRequest="200"
+                               CornerRadius="5"/>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
-            <!--Custom View Cells-->
-            <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
         </ListView>
     </StackLayout>
 </ContentPage>
