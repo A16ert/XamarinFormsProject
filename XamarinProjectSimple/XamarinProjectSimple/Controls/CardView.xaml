@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             x:Class="XamarinProjectSimple.Controls.CardView"
+             x:Name="content">
+    <ContentView.Resources>
+        <controls:StringToBoolConverter x:Key="stringConverter"/>
+    </ContentView.Resources>
+  <ContentView.Content>
+        <Frame x:Name="frame" CornerRadius="7" Padding="0" 
+               BorderColor="Transparent">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.19*"/>
+                    <RowDefinition Height="0.81*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.51*"/>
+                    <ColumnDefinition Width="0.49*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0"
+                       Source="discont.jpeg" Aspect="AspectFill"/>
+                <Frame x:Name="nameBorder" BackgroundColor="White"
+                       BorderColor="Transparent"
+                       CornerRadius="30" Grid.Column="1"
+                       Padding="4,2,14,2" Margin="0,0,-12,0"
+                       HorizontalOptions="EndAndExpand" VerticalOptions="End">
+                    <Frame.Triggers>
+                        <DataTrigger TargetType="Frame"
+                                     Binding="{Binding Source={x:Reference nameLabel},
+                                        Path=Text, Converter={StaticResource stringConverter}}"
+                                     Value="False">
+                            <Setter Property="BackgroundColor" Value="Transparent"/>
+                        </DataTrigger>
+                        <DataTrigger TargetType="Frame"
+                                     Binding="{Binding Source={x:Reference nameLabel},
+                                        Path=Text, Converter={StaticResource stringConverter}}"
+                                     Value="True">
+                            <Setter Property="BackgroundColor" Value="White"/>
+                        </DataTrigger>
+                    </Frame.Triggers>
+                    <Label x:Name="nameLabel" Text="{Binding Source={x:Reference content}, Path=OwnerName}"
+                           HorizontalOptions="Center" VerticalOptions="Center"
+                           LineBreakMode="TailTruncation" IsVisible="{Binding Source={x:Reference nameLabel},
+                                        Path=Text, Converter={StaticResource stringConverter}}"
+                           Margin="0"/>
+                </Frame>
+                
+            </Grid>
+        </Frame>
+  </ContentView.Content>
+</ContentView>

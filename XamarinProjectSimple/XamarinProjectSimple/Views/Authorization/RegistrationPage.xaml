@@ -27,10 +27,9 @@
                 <DatePicker/>
 
                 <Picker/>
-                
+
                 <Entry Text="Email"/>
-                <control:RadioGroup x:Name="SexRadioGroup" Orientation="Horizontal"
-                                    ItemsSource="{Binding SexDictionary.Values}"/>
+                
                 <Frame>
                     <StackLayout>
                         <Label Text="При регистрации вы подтверждаете своё согласие
