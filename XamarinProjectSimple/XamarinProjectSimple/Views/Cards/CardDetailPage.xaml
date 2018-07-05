@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cards="clr-namespace:XamarinProjectSimple.ViewModels.Cards"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             x:Class="XamarinProjectSimple.Views.Cards.CardDetailPage">
+    <ContentPage.BindingContext>
+        <cards:CardDetailViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <controls:Test/>
+    </ContentPage.Content>
+</ContentPage>
