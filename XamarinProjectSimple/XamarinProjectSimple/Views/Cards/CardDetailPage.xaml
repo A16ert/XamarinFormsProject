@@ -8,6 +8,6 @@
         <cards:CardDetailViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <controls:Test/>
+        <Label Text="asd"/>
     </ContentPage.Content>
 </ContentPage>
