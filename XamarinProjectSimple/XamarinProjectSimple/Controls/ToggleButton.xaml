@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             x:Class="XamarinProjectSimple.Controls.ToggleButton"
+             x:Name="mainView" Margin="0" Padding="0">
+  <ContentView.Content>
+        <Grid Margin="0" Padding="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="660*"/>
+                <ColumnDefinition Width="26*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1"/>
+            </Grid.RowDefinitions>
+            <!--Text-->
+            <Label Grid.Column="0" Text="{Binding Source={x:Reference mainView}, Path=Text}"
+                   TextColor="Black"
+                   FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            <!--icon-->
+            <controls:Icon x:Name="iconControl" Grid.Column="1" ResourceId="XamarinProjectSimple.Resources.arrow_pointer_icon.svg"
+                           RotationRadius="180" VerticalOptions="Center"/>
+            <BoxView Grid.Row="1" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="Gray"/>
+            <Button Grid.ColumnSpan="2" Grid.RowSpan="2" BorderColor="Transparent" BackgroundColor="Transparent" Clicked="Button_Clicked"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

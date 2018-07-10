@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             x:Class="XamarinProjectSimple.Controls.BarCodeExpander"
+             x:Name="mainControl" BackgroundColor="White" Margin="0" Padding="0">
+  <ContentView.Content>
+      <StackLayout>
+            <controls:ToggleButton x:Name="toggle" Text="Штрих-код" HeightRequest="40" Margin="16,0,16,0"/>
+            <StackLayout IsVisible="{Binding Source={x:Reference toggle}, Path=IsChecked}" Margin="0,0,0,0">
+                <Frame BackgroundColor="{StaticResource BackgroundGray}" BorderColor="{StaticResource BackgroundGray}"
+                       Padding="0" Margin="0"
+                       HeightRequest="42"
+                       HasShadow="False">
+                    <Frame.Content>
+                        <Label BackgroundColor="{StaticResource BackgroundGray}" Text="{Binding BarCodeNumber}"
+                               TextColor="Black"
+                               VerticalOptions="Center" Margin="16,0"/>
+                    </Frame.Content>
+                </Frame>
+                <Frame BackgroundColor="White" BorderColor="Transparent"
+                       HeightRequest="113"/>
+                <BoxView HeightRequest="1" BackgroundColor="Gray"/>
+            </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

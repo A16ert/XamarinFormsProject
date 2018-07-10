@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             x:Class="XamarinProjectSimple.Controls.CardInfoExpander">
+  <ContentView.Content>
+      <StackLayout>
+            <controls:ToggleButton x:Name="toggleBtn" Text="Скидка-20%" Margin="16,0"/>
+            <Grid HeightRequest="146" BackgroundColor="{StaticResource BackgroundGray}" IsVisible="{Binding Source={x:Reference toggleBtn}, Path=IsChecked}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Margin="16,0" Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Кэш-бэк" Grid.Column="0"
+                           VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"
+                           Margin="0,12"/>
+
+                    <StackLayout Grid.Column="1" Margin="0, 6, 0, 0" HorizontalOptions="EndAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="2000"/>
+                            <Label Text="P"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,14,0,0" HorizontalOptions="End">
+                            <Label Text="До"/>
+                            <Label Text="13.01.2018"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="16,0" Padding="0">
+                    <StackLayout>
+                        <Label Text="До максимальной скидки"/>
+                        <Slider Margin="0,14"/>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

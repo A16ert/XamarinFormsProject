@@ -26,7 +26,6 @@ namespace XamarinProjectSimple.iOS
             LoadApplication(new App());
 
             new FreshEssentials.iOS.AdvancedFrameRendereriOS();
-
             return base.FinishedLaunching(app, options);
         }
     }

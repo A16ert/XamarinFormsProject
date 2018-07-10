@@ -3,11 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cards="clr-namespace:XamarinProjectSimple.ViewModels.Cards"
              xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="XamarinProjectSimple.Views.Cards.CardDetailPage">
     <ContentPage.BindingContext>
         <cards:CardDetailViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Label Text="asd"/>
+        <ScrollView>
+            <ScrollView.Content>
+                <StackLayout>
+                    <controls:CardView HeightRequest="217" Margin="16,8,16,0" OwnerName="Константин Коснтантинов"/>
+                    <controls:BarCodeExpander x:Name="barCode"/>
+                    <controls:CardInfoExpander x:Name="cardInfo"/>
+                    <controls:PurshaseHistoryExpander x:Name="purshaseHistory"/>
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

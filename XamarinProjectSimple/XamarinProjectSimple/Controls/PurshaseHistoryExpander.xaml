@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             x:Class="XamarinProjectSimple.Controls.PurshaseHistoryExpander"
+             x:Name="mainControl">
+  <ContentView.Content>
+        <StackLayout>
+            <controls:ToggleButton x:Name="toggleBtn" Text="История покупок" Margin="16,0"/>
+            <StackLayout BackgroundColor="{StaticResource BackgroundGray}" IsVisible="{Binding Source={x:Reference toggleBtn}, Path=IsChecked}">
+                <Grid HeightRequest="44" Margin="16, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Text="Сумма всех покупок" TextColor="Black"
+                           VerticalOptions="CenterAndExpand"/>
+
+                    <StackLayout Orientation="Horizontal" Grid.Column="1"
+                                 VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                        <Label Text="{Binding Source={x:Reference mainControl}, Path=PurshaseList.TotalSummValue}" TextColor="Black"/>
+                        <Label Text="P" TextColor="Black"/>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="1" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="Gray"/>
+                </Grid>
+                <StackLayout Grid.Row="1" x:Name="purshaseStack" Margin="16, 0" Padding="0" HeightRequest="400"/>
+            </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

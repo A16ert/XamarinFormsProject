@@ -4,6 +4,7 @@ using XamarinProjectSimple.Views;
 using Xamarin.Forms.Xaml;
 using XamarinProjectSimple.Views.Authorization;
 using XamarinProjectSimple.Services.Authorization;
+using XamarinProjectSimple.Views.Cards;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace XamarinProjectSimple
@@ -22,7 +23,7 @@ namespace XamarinProjectSimple
 
             if (auth.IsAuthorized) GoToRoot();
 
-            else MainPage = new NavigationPage(new AuthPage());
+            else MainPage = new NavigationPage(new CardDetailPage());
 		}
 
 		protected override void OnStart ()

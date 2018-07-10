@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinProjectSimple.Controls.Purshase" Padding="0" Margin="0" x:Name="purshaseControl">
+    <ContentView.Content>
+        <Grid Padding="0" Margin="0" HeightRequest="140">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="42*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="64*"/>
+                <RowDefinition Height="1"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="{Binding Source ={x:Reference purshaseControl}, Path = PurshaseInfo.Date}" Grid.Row="0"/>
+            <Label Text="{Binding Source ={x:Reference purshaseControl}, Path = PurshaseInfo.Name}" Grid.Row="1"/>
+            <Label Text="{Binding Source ={x:Reference purshaseControl}, Path = PurshaseInfo.Summ}" Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+            <Label Text="Скидка" Grid.Row="2" Grid.Column="0"/>
+            <Label Text="{Binding Source ={x:Reference purshaseControl}, Path = PurshaseInfo.DiscountSumm}" Grid.Row="2" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+            <Label Text="ИТОГО" FontSize="Large" TextColor="Black"
+                   Grid.Row="3" Grid.Column="0"
+                   VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
+            <Label Text="{Binding Source ={x:Reference purshaseControl}, Path = PurshaseInfo.TotalSumm}"
+                   Grid.Row="3" Grid.Column="1" FontSize="Large" TextColor="Black"
+                   VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand"/>
+
+            <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="Gray" HeightRequest="1" Margin="0" Color="Gray"/>
+        </Grid>
+  </ContentView.Content>
+</ContentView>
