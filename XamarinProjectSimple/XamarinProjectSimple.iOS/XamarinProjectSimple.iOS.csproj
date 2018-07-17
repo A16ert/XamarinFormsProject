@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renders\EntryRenders\CustomEntryRender.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
@@ -160,4 +161,5 @@
   <ItemGroup>
     <BundleResource Include="Resources\add_card_icon.png" />
   </ItemGroup>
+  <ItemGroup />
 </Project>
