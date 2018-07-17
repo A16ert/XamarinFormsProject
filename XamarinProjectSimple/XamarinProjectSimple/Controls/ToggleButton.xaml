@@ -16,7 +16,7 @@
             </Grid.RowDefinitions>
             <!--Text-->
             <Label Grid.Column="0" Text="{Binding Source={x:Reference mainView}, Path=Text}"
-                   TextColor="Black"
+                   TextColor="Black" FontFamily="{StaticResource SFUIText-Medium}"
                    FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
             <!--icon-->
             <controls:Icon x:Name="iconControl" Grid.Column="1" ResourceId="XamarinProjectSimple.Resources.arrow_pointer_icon.svg"

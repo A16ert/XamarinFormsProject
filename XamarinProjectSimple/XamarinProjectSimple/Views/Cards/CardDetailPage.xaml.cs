@@ -19,6 +19,7 @@ namespace XamarinProjectSimple.Views.Cards
         public CardDetailPage ()
 		{
 			InitializeComponent ();
+            Title = "Merge";
             barCode.BindingContext = new BarCodeViewModel();
 
             purshaseHistory.PurshaseList = new Models.CardsModels.PurshaseListModel()

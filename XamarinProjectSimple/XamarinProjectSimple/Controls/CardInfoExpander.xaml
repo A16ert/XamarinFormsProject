@@ -3,10 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
              x:Class="XamarinProjectSimple.Controls.CardInfoExpander">
-  <ContentView.Content>
-      <StackLayout>
+    <ContentView.Content>
+        <StackLayout>
+            <StackLayout.Resources>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="FontFamily" Value="{StaticResource SFUIText-Regular}"/>
+                    <Setter Property="TextColor" Value="Black"/>
+                </Style>
+            </StackLayout.Resources>
             <controls:ToggleButton x:Name="toggleBtn" Text="Скидка-20%" Margin="16,0"/>
-            <Grid HeightRequest="146" BackgroundColor="{StaticResource BackgroundGray}" IsVisible="{Binding Source={x:Reference toggleBtn}, Path=IsChecked}">
+            <Grid HeightRequest="160" BackgroundColor="{StaticResource BackgroundGray}" IsVisible="{Binding Source={x:Reference toggleBtn}, Path=IsChecked}">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -23,10 +29,10 @@
 
                     <StackLayout Grid.Column="1" Margin="0, 6, 0, 0" HorizontalOptions="EndAndExpand">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="2000"/>
-                            <Label Text="P"/>
+                            <Label FontFamily="{StaticResource SFUIText-Semibold}" FontSize="Large" Text="2000"/>
+                            <Label FontFamily="{StaticResource SFUIText-Semibold}" FontSize="Large" Text="P"/>
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal" Margin="0,14,0,0" HorizontalOptions="End">
+                        <StackLayout Orientation="Horizontal" Margin="0,0,0,0" HorizontalOptions="End">
                             <Label Text="До"/>
                             <Label Text="13.01.2018"/>
                         </StackLayout>
@@ -35,7 +41,7 @@
 
                 <Grid Grid.Row="1" Margin="16,0" Padding="0">
                     <StackLayout>
-                        <Label Text="До максимальной скидки"/>
+                        <Label Text="До максимальной скидки: 8000 P"/>
                         <Slider Margin="0,14"/>
                     </StackLayout>
                 </Grid>

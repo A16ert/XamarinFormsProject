@@ -14,12 +14,16 @@
                        HasShadow="False">
                     <Frame.Content>
                         <Label BackgroundColor="{StaticResource BackgroundGray}" Text="{Binding BarCodeNumber}"
-                               TextColor="Black"
+                               TextColor="Black" FontFamily="{StaticResource Key=SFUIText-Semibold}"
                                VerticalOptions="Center" Margin="16,0"/>
                     </Frame.Content>
                 </Frame>
-                <Frame BackgroundColor="White" BorderColor="Transparent"
-                       HeightRequest="113"/>
+                <Frame BorderColor="Transparent"
+                       HeightRequest="113" WidthRequest="200">
+                    <Frame.Content>
+                        <controls:Icon ResourceId="XamarinProjectSimple.Resources.barcode.svg" WidthRequest="200"/>
+                    </Frame.Content>
+                </Frame>
                 <BoxView HeightRequest="1" BackgroundColor="Gray"/>
             </StackLayout>
         </StackLayout>

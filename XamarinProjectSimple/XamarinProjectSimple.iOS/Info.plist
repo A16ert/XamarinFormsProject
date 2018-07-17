@@ -7,6 +7,12 @@
 		<integer>1</integer>
 		<integer>2</integer>
 	</array>
+  <key>UIAppFonts</key>
+  <array>
+    <string>SF-UI-Text-Semibold</string>
+    <string>SFUIText-Medium</string>
+    <string>SFUIText-Regular</string>
+  </array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

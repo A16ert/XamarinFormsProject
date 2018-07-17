@@ -22,7 +22,7 @@ namespace XamarinProjectSimple.Views.Cards
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await Navigation.PushAsync(new CardDetailPage());
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
