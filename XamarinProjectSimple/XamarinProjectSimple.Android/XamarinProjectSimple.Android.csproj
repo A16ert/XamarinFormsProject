@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renders\ButtonRenders\ButtonUnderlineRender.cs" />
     <Compile Include="Renders\EntryRenders\CustomEntryRender.cs" />
     <Compile Include="Renders\LabelRenders\UnderlineLabelRender.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

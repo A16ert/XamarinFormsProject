@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renders\ButtonRenderers\ButtonUnderlineRenderer.cs" />
     <Compile Include="Renders\EntryRenders\CustomEntryRender.cs" />
     <Compile Include="Renders\LabelRenders\UnderlineLabelRender.cs" />
     <None Include="Entitlements.plist" />
