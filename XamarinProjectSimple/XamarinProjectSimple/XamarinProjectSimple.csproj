@@ -6,11 +6,15 @@
 
   <ItemGroup>
     <None Remove="arrow_pointer_icon.svg" />
+    <None Remove="Resources\Auth\facebook_logo.svg" />
+    <None Remove="Resources\Auth\vk_logo.svg" />
     <None Remove="Resources\barcode.svg" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\arrow_pointer_icon.svg" />
+    <EmbeddedResource Include="Resources\Auth\facebook_logo.svg" />
+    <EmbeddedResource Include="Resources\Auth\vk_logo.svg" />
     <EmbeddedResource Include="Resources\barcode.svg" />
   </ItemGroup>
 

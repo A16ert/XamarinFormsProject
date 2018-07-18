@@ -3,68 +3,57 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using CoreAnimation;
-using CoreGraphics;
+
 using Foundation;
 using UIKit;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
-using XamarinProjectSimple.Controls.CustomEntrys;
-using XamarinProjectSimple.iOS.Renders.EntryRenders;
+using XamarinProjectSimple.Controls.labels;
 
-[assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRender))]
-namespace XamarinProjectSimple.iOS.Renders.EntryRenders
+namespace XamarinProjectSimple.iOS.Renders.LabelRenders
 {
-    public class CustomEntryRender : ViewRenderer<CustomEntry, UITextField>
+    class UnderlineLabelRender : ViewRenderer<UnderlineLabel, UILabel>
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<CustomEntry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<UnderlineLabel> e)
         {
+
             base.OnElementChanged(e);
+
             if (Control == null)
             {
-                var uiTextField = new UITextField
+                UILabel uilabel = new UILabel
                 {
                     Font = UIFont.SystemFontOfSize(25)
                 };
-                uiTextField.BorderStyle = UITextBorderStyle.None;
-                uiTextField.BorderRect(new CGRect(0, 45, 335, 5));
-                SetNativeControl(uiTextField);
-                //DrawBorder();
+                SetNativeControl(uilabel);
             }
             if (e.NewElement != null)
             {
+                this.Control.AttributedText = new NSAttributedString(Element.Text, underlineStyle: NSUnderlineStyle.Single);
+
                 SetText();
                 SetTextColor();
+                //SetTextSize();
             }
 
         }
-
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (e.PropertyName == CustomEntry.PaddingProperty.PropertyName)
+            if (e.PropertyName == UnderlineLabel.TextColorProperty.PropertyName)
             {
                 SetTextColor();
             }
-        }
-
-        void DrawBorder()
-        {
-            CALayer borderLayer = new CALayer
+            else if (e.PropertyName == UnderlineLabel.TextProperty.PropertyName)
             {
-                BackgroundColor = UIColor.FromRGB(23, 162, 227).CGColor,
-                Frame = new CGRect(0, 45, 335, 5)
-            };
-            Layer.AddSublayer(borderLayer);
+                SetText();
+            }
         }
-
         private void SetText()
         {
             Control.Text = Element.Text;
         }
-
         private void SetTextColor()
         {
             UIColor iosColor = UIColor.Gray;
@@ -79,6 +68,11 @@ namespace XamarinProjectSimple.iOS.Renders.EntryRenders
                     (byte)(color.A * 255));
             }
             Control.TextColor = iosColor;
+        }
+
+        private void SetTextSize()
+        {
+            Control.Font.WithSize(new nfloat(Element.FontSize));
         }
     }
 }
