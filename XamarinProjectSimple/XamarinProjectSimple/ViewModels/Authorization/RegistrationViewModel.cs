@@ -9,6 +9,23 @@ namespace XamarinProjectSimple.ViewModels.Authorization
     {
         public event Action RegisterIsSuccsess = delegate {};
 
+        public int SexSelectedId { get; set; }
+
+        private DateTime _birthDateValue = DateTime.Now;
+        public DateTime BirthDateValue
+        {
+            get => _birthDateValue;
+            set
+            {
+                _birthDateValue = value;
+
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(BirthDate));
+            }
+        }
+
+        public string BirthDate => BirthDateValue.ToString("dd.MM.yyyy");
+
         private Dictionary<int, string> _sexDictionary;
         public Dictionary<int, string> SexDictionary
         {
@@ -25,10 +42,10 @@ namespace XamarinProjectSimple.ViewModels.Authorization
         {
             SexDictionary = new Dictionary<int, string>
             {
-                { 0, "Мужской" },
-                { 1, "Женский" }
+                { 0, "Я Мужчина" },
+                { 1, "Я Женщина" }
             };
-
+            SexSelectedId = 0;
             RegisterCommand = new Command(RegisterUser);
         }
 

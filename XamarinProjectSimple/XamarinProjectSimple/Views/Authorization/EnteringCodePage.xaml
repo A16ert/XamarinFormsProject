@@ -2,14 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:XamarinProjectSimple.ViewModels.Authorization"
-             x:Class="XamarinProjectSimple.Views.Authorization.EnteringCodePage">
+             xmlns:customentrys="clr-namespace:XamarinProjectSimple.Controls.CustomEntrys"
+             x:Class="XamarinProjectSimple.Views.Authorization.EnteringCodePage" BackgroundColor="{StaticResource BackgroundGray}">
     <ContentPage.BindingContext>
         <viewModel:EnteringCodeViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Entry Text="{Binding Code}" />
-            <Button Text="Подтвердить" Command="{Binding SendCodeCommand, Mode=OneWay}"/>
-        </StackLayout>
+        <Grid Margin="0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="91*"/>
+                <RowDefinition Height="146*"/>
+                <RowDefinition Height="951*"/>
+            </Grid.RowDefinitions>
+            <Grid BackgroundColor="White" Grid.Row="0">
+                <customentrys:CustomEntry Text="{Binding Code}" Margin="16,0" Placeholder="Код подтверждения"/>
+            </Grid>
+            <Button Text="Подтвердить" Command="{Binding SendCodeCommand, Mode=OneWay}"
+                    VerticalOptions="EndAndExpand" 
+                    Grid.Row="1"
+                    HeightRequest="57"
+                    Style="{StaticResource buttonWithBorders}" Margin="16, 0"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

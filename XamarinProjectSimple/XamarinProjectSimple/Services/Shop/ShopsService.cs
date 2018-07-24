@@ -22,7 +22,8 @@ namespace XamarinProjectSimple.Services.Shop
 
             return new List<ShopModel>()
             {
-                new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),
+                new ShopModel("NameTest", @"Только до января 2018! СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ — успей купить 2" +
+                                "сумки на сумму от 10000 рублейи получи кошелек и что то там ещё такое qwasd wqdas weqeqqq", imagesList),
                 new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),
                 new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),
                 new ShopModel("NameTest", "DescritiropawdDescritiropawdDescritiropawdDescritiropawdDescritiropawd", imagesList),

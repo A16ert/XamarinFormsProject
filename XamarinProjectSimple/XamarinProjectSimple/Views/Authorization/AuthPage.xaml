@@ -57,13 +57,10 @@
 
 
                 <Button Grid.Row="2"
+                        Style="{StaticResource buttonWithBorders}"
                         Text="Войти"
-                        BorderRadius="12"
                         Command="{Binding EnterCommand}"
-                        Margin="16, 0"
-                        BackgroundColor="Transparent" BorderColor="Black"
-                        BorderWidth="1"
-                        TextColor="Black"/>
+                        Margin="16, 0"/>
                 <StackLayout Grid.Row="3" VerticalOptions="EndAndExpand">
                     <Label Text="Войти через соц.сеть:" TextColor="Black" FontFamily="{StaticResource SFUIText-Medium}" HorizontalOptions="Center"/>
                     <StackLayout HorizontalOptions="Center" VerticalOptions="EndAndExpand" Orientation="Horizontal">

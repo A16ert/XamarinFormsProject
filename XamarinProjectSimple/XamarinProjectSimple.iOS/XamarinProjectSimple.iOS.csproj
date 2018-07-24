@@ -68,6 +68,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renders\ButtonRenderers\ButtonUnderlineRenderer.cs" />
     <Compile Include="Renders\EntryRenders\CustomEntryRender.cs" />
+    <Compile Include="Renders\LabelRenders\MultiLineRenderer.cs" />
     <Compile Include="Renders\LabelRenders\UnderlineLabelRender.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist">
@@ -149,6 +150,9 @@
       <Version>1.60.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
+    <PackageReference Include="XLabs.Forms">
+      <Version>2.0.5782</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

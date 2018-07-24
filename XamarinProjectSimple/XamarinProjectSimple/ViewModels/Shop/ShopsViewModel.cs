@@ -23,15 +23,26 @@ namespace XamarinProjectSimple.ViewModels.Shop
 
         }
 
+        public Command<object> OpenDescriptionCommand { get; private set; }
+
+
         public ShopsViewModel()
         {
+            Title = "Магазин";
             _shopsService = DependencyService.Get<IShopsService>();
 
             ShopsList = new ObservableCollection<ShopModel>( _shopsService.GetShopsList());
+
+            OpenDescriptionCommand = new Command<object>(OpenDescription);
         }
 
         private ObservableCollection<ShopModel> _shopsList;
 
         private IShopsService _shopsService;
+
+        private void OpenDescription(object model)
+        {
+
+        }
     }
 }

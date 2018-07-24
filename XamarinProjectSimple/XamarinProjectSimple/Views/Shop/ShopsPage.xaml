@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:XamarinProjectSimple.ViewModels.Shop"
              xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
-             Title="Магазин"
+             xmlns:labels="clr-namespace:XamarinProjectSimple.Controls.labels"
+             xmlns:frames="clr-namespace:XamarinProjectSimple.Controls.Frames"
+             Title="{Binding Title}"
              x:Class="XamarinProjectSimple.Views.Shop.ShopsPage">
     <ContentPage.BindingContext>
         <vm:ShopsViewModel/>
@@ -22,17 +24,38 @@
         </DataTemplate>
         <DataTemplate x:Key="ShopsListTemplate">
             <ViewCell>
-                <StackLayout HeightRequest="500" Padding="10">
-                    <StackLayout Orientation="Horizontal">
-                        <Frame Style="{StaticResource CircleFrame}" BackgroundColor="Green"
-                                   HeightRequest="50" WidthRequest="50"/>
-                        <Label Text="{Binding Name}" VerticalOptions="Center"
-                                               LineBreakMode="NoWrap" 
-                                               FontSize="16" />
+                <StackLayout >
+                    <Grid HeightRequest="50" Margin="8, 0">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShopFooterBtn_Clicked" CommandParameter="{Binding}"/>
+                        </Grid.GestureRecognizers>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="0.650*"/>
+                            <ColumnDefinition Width="0.350*"/>
+                        </Grid.ColumnDefinitions>
+                        <frames:AvatarCircle  Source="black.png"
+                                              WidthRequest="45" HeightRequest="45"
+                                              HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+
+                        <Label Text="{Binding Name}" Grid.Column="1" VerticalOptions="Center"
+                               Margin="3,0"
+                               TextColor="Black"
+                               LineBreakMode="NoWrap" 
+                               FontSize="16" />
+                        <Label Text="17 ноя. в 19:30" Grid.Column="2" LineBreakMode="NoWrap"
+                               HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </Grid>
+                    <StackLayout Margin="8, 0" Orientation="Horizontal">
+                        <labels:MultiLineLabel x:Name="descriptionLabel" Text="{Binding Description}" FontSize="13" TextColor="Black" LineBreakMode="TailTruncation"
+                                               Lines="3"/>
+                        <Label Text="ещё" VerticalOptions="End" HorizontalOptions="Start" LineBreakMode="NoWrap" WidthRequest="85">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClickGestureRecognizer_Clicked" CommandParameter="{Binding Source={x:Reference descriptionLabel}}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
                     </StackLayout>
-                    <Label Text="{Binding Description}" 
-                                            LineBreakMode="NoWrap"
-                                            FontSize="13" />
                     <carousel:CarouselViewControl HeightRequest="400" ShowIndicators="True"
                                                       ItemTemplate="{StaticResource CarouselTemplate}"
                                                       ItemsSource="{Binding ImagesList}"/>
@@ -42,6 +65,7 @@
     </ContentPage.Resources>
 
     <ListView x:Name="MyListView" HasUnevenRows="True"
+              SelectionMode="None"
               ItemTemplate="{StaticResource ShopsListTemplate}"
               ItemsSource="{Binding ShopsList}"/>
 </ContentPage>

@@ -10,11 +10,20 @@
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
+            <Style TargetType="Button" x:Key="buttonWithBorders">
+                <Setter Property="CornerRadius" Value="12"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BorderWidth" Value="1"/>
+            </Style>
             <Color x:Key="BackgroundGray">#efeff4</Color>
 
             <OnPlatform x:Key="SFUIText-Medium" x:TypeArguments="x:String" iOS="SFUIText-Medium" Android="SFUIText-Medium.otf#SFUIText-Medium"/>
             <OnPlatform x:Key="SFUIText-Semibold" x:TypeArguments="x:String" iOS="SF-UI-Text-Semibold" Android="SF-UI-Text-Semibold.ttf#SF-UI-Text-Semibold"/>
             <OnPlatform x:Key="SFUIText-Regular" x:TypeArguments="x:String" iOS="SFUIText-Regular" Android="SFUIText-Regular.otf#SFUIText-Regular"/>
+            
+            
         </ResourceDictionary>
 	</Application.Resources>
 </Application>
