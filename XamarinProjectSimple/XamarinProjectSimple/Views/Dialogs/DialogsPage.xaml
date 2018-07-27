@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinProjectSimple.Views.Dialogs.DialogsPage"
              xmlns:viewModel="clr-namespace:XamarinProjectSimple.ViewModels.Dialogs"
+             xmlns:frames="clr-namespace:XamarinProjectSimple.Controls.Frames"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
              Title="Диалоги">
     <ContentPage.BindingContext>
         <viewModel:DialogsViewModel/>
@@ -16,13 +18,66 @@
         </Style>
     </ContentPage.Resources>
     <ListView x:Name="DialogsListView" HasUnevenRows="True"
-              ItemTapped="DialogsListView_ItemTapped"
+              Margin="8, 0, 0, 0"
               ItemsSource="{Binding DialogsList}"
+              SelectionMode="None"
               CachingStrategy="RecycleElement">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell Height="120" >
+                <ViewCell Height="60" >
                     <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="200*"/>
+                            <ColumnDefinition Width="104*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <frames:AvatarCircle Source="black.png" Grid.Column="0"/>
+
+                        <Grid Grid.Column="1" VerticalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="shopName" Grid.Row="0" LineBreakMode="TailTruncation"
+                                    VerticalOptions="StartAndExpand"
+                                    Text="{Binding Name}" FontFamily="{StaticResource SFUIText-Medium}"
+                                    TextColor="Black"/>
+                            <Label x:Name="lastMessage" Grid.Row="1" LineBreakMode="TailTruncation"
+                                   VerticalOptions="EndAndExpand"
+                                   Text="{Binding LastMessage}" FontFamily="{StaticResource SFUIText-Regular}"
+                                   TextColor="Black"/>
+                        </Grid>
+
+                        <Grid Grid.Column="2" Margin="0,0,8,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85*"/>
+                                <ColumnDefinition Width="15*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Label x:Name="dateLabel" Text="{Binding Date}" LineBreakMode="NoWrap"
+                                   VerticalOptions="End" HorizontalOptions="End"
+                                   TextColor="{StaticResource FontGray}" FontFamily="{StaticResource SFUIText-Medium}"/>
+                            <frames:CounterCircle x:Name="messageCountLabel" 
+                                   Grid.Row="1" HeightRequest="20" WidthRequest="20"
+                                   VerticalOptions="Start" HorizontalOptions="End"
+                                   BackgroundColor="Red" />
+
+                            <controls:Icon Grid.RowSpan="2" ResourceId="XamarinProjectSimple.Resources.Pointer.right_arrow_icon.svg" Grid.Column="1">
+                                <controls:Icon.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="DialogsListView_ItemTapped"/>
+                                </controls:Icon.GestureRecognizers>
+                            </controls:Icon>
+                        </Grid>
+                    </Grid>
+
+                    
+                    
+                    <!--<Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="0.023*"/>
                             <ColumnDefinition Width="1*"/>
@@ -39,12 +94,12 @@
                                 <ColumnDefinition Width="0.56*"/>
                                 <ColumnDefinition Width="0.276*"/>
                             </Grid.ColumnDefinitions>
-                            <!--avatar-->
+                            --><!--avatar--><!--
                             <Frame Style="{StaticResource CircleFrame}" BackgroundColor="Green"
                                    HeightRequest="60" WidthRequest="60" 
                                    HorizontalOptions="Start"
                                    VerticalOptions="Center"/>
-                            <!--message info-->
+                            --><!--message info--><!--
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
@@ -66,10 +121,10 @@
                                     </Frame>
                                 </StackLayout>
 
-                                <!--<Button BackgroundColor="Transparent" BorderColor="Transparent" Text=">" FontSize="Large"/>-->
+                                --><!--<Button BackgroundColor="Transparent" BorderColor="Transparent" Text=">" FontSize="Large"/>--><!--
                             </StackLayout>
                         </Grid>
-                    </Grid>
+                    </Grid>-->
                     
 
                     <!--<StackLayout Orientation="Horizontal">

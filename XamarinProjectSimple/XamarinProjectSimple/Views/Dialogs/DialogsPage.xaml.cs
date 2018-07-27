@@ -18,7 +18,7 @@ namespace XamarinProjectSimple.Views.Dialogs
             InitializeComponent();
         }
 
-        private async void DialogsListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void DialogsListView_ItemTapped(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new DialogDetailPage());
         }

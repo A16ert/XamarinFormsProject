@@ -10,6 +10,7 @@
     <None Remove="Resources\Auth\vk_logo.svg" />
     <None Remove="Resources\barcode.svg" />
     <None Remove="Resources\black.png" />
+    <None Remove="Resources\Pointer\right_arrow_icon.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +19,7 @@
     <EmbeddedResource Include="Resources\Auth\vk_logo.svg" />
     <EmbeddedResource Include="Resources\barcode.svg" />
     <EmbeddedResource Include="Resources\black.png" />
+    <EmbeddedResource Include="Resources\Pointer\right_arrow_icon.svg" />
   </ItemGroup>
 
   <ItemGroup>

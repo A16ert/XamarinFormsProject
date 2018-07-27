@@ -74,7 +74,9 @@ namespace XamarinProjectSimple.Controls
 
             using (Stream stream = GetType().Assembly.GetManifestResourceStream(ResourceId))
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 SKSvg svg = new SKSvg();
+#pragma warning restore CS0618 // Type or member is obsolete
                 svg.Load(stream);
 
                 SKImageInfo info = args.Info;
