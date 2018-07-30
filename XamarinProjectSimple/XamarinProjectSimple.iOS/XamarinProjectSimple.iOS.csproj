@@ -169,19 +169,19 @@
     <BundleResource Include="Resources\sending_message.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\shop_icon%401x.png" />
+    <BundleResource Include="Resources\shop_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cards_icon%401x.png" />
+    <BundleResource Include="Resources\cards_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\message_icon%401x.png" />
+    <BundleResource Include="Resources\message_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\profile_icon%401x.png" />
+    <BundleResource Include="Resources\profile_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\qr_icon%401x.png" />
+    <BundleResource Include="Resources\qr_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\shop_icon%402x.png" />

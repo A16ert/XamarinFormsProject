@@ -52,7 +52,20 @@
                        HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start"
                        
                        LineBreakMode="WordWrap" TextColor="Black"/>
-                <labels:UnderlineLabel Text="Отзывы" TextColor="Gray" HorizontalOptions="EndAndExpand"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <controls:Icon HeightRequest="20" WidthRequest="20" VerticalOptions="Center"
+                                                   IconColor="#666666"
+                                                   ResourceId="XamarinProjectSimple.Resources.Rating.like.svg"/>
+                    <Label Text="100" TextColor="#666666"
+                                           Margin="0,0,15,0"/>
+
+                    <controls:Icon HeightRequest="20" WidthRequest="20" VerticalOptions="Center"
+                                                   IconColor="#666666"
+                                                   ResourceId="XamarinProjectSimple.Resources.Rating.UnLike.svg"/>
+                    <Label Text="100" TextColor="#666666"/>
+
+                </StackLayout>
+                <labels:UnderlineLabel Text="Отзывы" TextColor="#666666" HorizontalOptions="EndAndExpand"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

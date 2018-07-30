@@ -23,7 +23,7 @@ namespace XamarinProjectSimple
 
             if (auth.IsAuthorized) GoToRoot();
 
-            else MainPage = new NavigationPage(new Views.Cards.ShopInfo.ReviewsListPage());
+            else MainPage = new NavigationPage(new AuthPage());
         }
 
 		protected override void OnStart ()

@@ -2,50 +2,91 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:frames="clr-namespace:XamarinProjectSimple.Controls.Frames"
-             BackgroundColor="{StaticResource BackgroundGray}"
              xmlns:reviewModel="clr-namespace:XamarinProjectSimple.Models.ReviewModel"
-             x:Class="XamarinProjectSimple.Views.Cards.ShopInfo.ReviewsListPage">
-  <ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
-            Margin="10, 0"
-            HasUnevenRows="True" SeparatorVisibility="None"
-            IsGroupingEnabled="True"
-            CachingStrategy="RecycleElement">
-        <ListView.GroupHeaderTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
-                        <frames:AvatarCircle Source="black.png"
+             xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             x:Class="XamarinProjectSimple.Views.Cards.ShopInfo.ReviewsListPage"
+             BackgroundColor="{StaticResource BackgroundGray}">
+    <ContentPage.Resources>
+        <Color x:Key="MessageTextColor">#666666</Color>
+        <Color x:Key="InfoTextColor">#999999</Color>
+    </ContentPage.Resources>
+    <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <fe:SegmentedButtonGroup OnColor="#1886fe" OffColor="{StaticResource BackgroundGray}"
+                                 SelectedIndex="{Binding SelectedFilterIndex}"
+                                 Margin="16,9,16,16"
+                                 CornerRadius="5"
+                                 HeightRequest="20">
+            <fe:SegmentedButtonGroup.LabelStyle>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="12" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                </Style>
+            </fe:SegmentedButtonGroup.LabelStyle>
+            <fe:SegmentedButtonGroup.SegmentedButtons>
+                <fe:SegmentedButton Title="по полезности"/>
+                <fe:SegmentedButton Title="по дате"/>
+            </fe:SegmentedButtonGroup.SegmentedButtons>
+        </fe:SegmentedButtonGroup>
+        
+        <ListView x:Name="MyListView"
+                  Grid.Row="1"
+                  ItemsSource="{Binding Items}"
+                  SelectionMode="None"
+                  HasUnevenRows="True" SeparatorVisibility="None"
+                  IsGroupingEnabled="True"
+                  CachingStrategy="RecycleElement">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="16,0,16,20">
+                            <frames:AvatarCircle Source="black.png"
                                              WidthRequest="50" HeightRequest="50"
                                              VerticalOptions="StartAndExpand"
                                              Margin="0,0,10,0"/>
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding MessageText}" TextColor="#666666" FontSize="17"/>
-                            <Label Text="{Binding MessageInfo}" TextColor="#999999"/>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding PositivRating}" TextColor="#666666"/>
-                                <Label Text="{Binding NegativeRating}" TextColor="#666666"/>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding MessageText}" TextColor="{StaticResource MessageTextColor}" FontSize="17"/>
+                                <Label Text="{Binding MessageInfo}" TextColor="{StaticResource InfoTextColor}"/>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <controls:Icon HeightRequest="20" WidthRequest="20" VerticalOptions="Center"
+                                                   IconColor="{StaticResource MessageTextColor}"
+                                                   ResourceId="XamarinProjectSimple.Resources.Rating.like.svg"/>
+                                    <Label Text="{Binding PositivRating}" TextColor="{StaticResource MessageTextColor}"
+                                           Margin="0,0,25,0"/>
+
+                                    <controls:Icon HeightRequest="20" WidthRequest="20" VerticalOptions="Center"
+                                                   IconColor="{StaticResource MessageTextColor}"
+                                                   ResourceId="XamarinProjectSimple.Resources.Rating.UnLike.svg"/>
+                                    <Label Text="{Binding NegativeRating}" TextColor="{StaticResource MessageTextColor}"/>
+                                    
+                                </StackLayout>
                             </StackLayout>
                         </StackLayout>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.GroupHeaderTemplate>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
 
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="50,0,0,10">
-                        <frames:AvatarCircle Source="black.png"
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="50,0,16,10">
+                            <frames:AvatarCircle Source="black.png"
                                              WidthRequest="60" HeightRequest="50"
                                              VerticalOptions="StartAndExpand"
                                              Margin="0,0,10,0"/>
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding MessageText}" TextColor="#666666" FontSize="17"/>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding MessageText}" TextColor="{StaticResource MessageTextColor}" FontSize="17"/>
+                            </StackLayout>
                         </StackLayout>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
 </ContentPage>

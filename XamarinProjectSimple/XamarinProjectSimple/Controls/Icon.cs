@@ -26,6 +26,12 @@ namespace XamarinProjectSimple.Controls
                                                                                            0f,
                                                                                            propertyChanged: RedrawCanvas);
 
+        public static readonly BindableProperty IconColorProperty = BindableProperty.Create(nameof(RotationRadius),
+                                                                                           typeof(Color),
+                                                                                           typeof(Icon),
+                                                                                           Color.Transparent,
+                                                                                           propertyChanged: RedrawCanvas);
+
         public string ResourceId
         {
             get => (string)GetValue(IconFilePathProperty);
@@ -37,6 +43,13 @@ namespace XamarinProjectSimple.Controls
             get => (float)GetValue(RotationRadiusProperty);
 
             set => SetValue(RotationRadiusProperty, value);
+        }
+
+        public Color IconColor
+        {
+            get => (Color)GetValue(IconColorProperty);
+
+            set => SetValue(IconColorProperty, value);
         }
 
         private readonly SKCanvasView _canvasView = new SKCanvasView();
@@ -97,7 +110,21 @@ namespace XamarinProjectSimple.Controls
                 canvas.Translate(-bounds.MidX, -bounds.MidY);
                 canvas.RotateDegrees(RotationRadius, bounds.MidX, bounds.MidY);
 
-                canvas.DrawPicture(svg.Picture);
+                if (IconColor == Color.Transparent)
+                {
+                    canvas.DrawPicture(svg.Picture);
+                    return;
+                }
+
+                using (var paint = new SKPaint())
+                {
+
+                    paint.ColorFilter = SKColorFilter.CreateBlendMode(
+                        IconColor.ToSKColor(),       // the color, also `(SKColor)0xFFFF0000` is valid
+                        SKBlendMode.SrcIn); // use the source color
+
+                    canvas.DrawPicture(svg.Picture, paint);
+                }
             }
         }
     }
