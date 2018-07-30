@@ -67,7 +67,7 @@
                                    VerticalOptions="Start" HorizontalOptions="End"
                                    BackgroundColor="Red" />
 
-                            <controls:Icon Grid.RowSpan="2" ResourceId="XamarinProjectSimple.Resources.Pointer.right_arrow_icon.svg" Grid.Column="1">
+                            <controls:Icon Grid.RowSpan="2" Grid.Column="1" ResourceId="XamarinProjectSimple.Resources.Pointer.right_arrow_icon.svg" >
                                 <controls:Icon.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="DialogsListView_ItemTapped"/>
                                 </controls:Icon.GestureRecognizers>

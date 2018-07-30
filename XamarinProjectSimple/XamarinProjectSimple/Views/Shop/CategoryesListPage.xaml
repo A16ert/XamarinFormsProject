@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             x:Class="XamarinProjectSimple.Views.Shop.CategoryesListPage"
+             Title="Фирмы по категориям">
+  <ListView x:Name="MyListView"
+            ItemsSource="{Binding Items}"
+            Margin="0, 0, 10, 0"
+            SelectionMode="None"
+            CachingStrategy="RecycleElement">
+            
+    <!--Built in Cells-->
+    <ListView.ItemTemplate>
+        <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230*"/>
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding .}" Margin="10, 0, 0, 0"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               Style="{DynamicResource ListItemTextStyle}" />
+                        <controls:Icon ResourceId="XamarinProjectSimple.Resources.Pointer.right_arrow_icon.svg" Grid.Column="1"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+    </ListView.ItemTemplate>
+    
+    <!--Custom View Cells-->
+    <!--
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <Label Text="{Binding Text}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Detail}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    -->
+  </ListView>
+</ContentPage>

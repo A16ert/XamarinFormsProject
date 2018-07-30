@@ -7,56 +7,31 @@
             xmlns:cards="clr-namespace:XamarinProjectSimple.Views.Cards"
             x:Class="XamarinProjectSimple.Views.MainPage">
     <TabbedPage.Children>
-        <NavigationPage Title="Магазин">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="1"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Icon="shop_icon.png">
             <x:Arguments>
                 <shop:ShopsPage/>
             </x:Arguments>
         </NavigationPage>
-        
-        <NavigationPage Title="Мои карты">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="2"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+
+        <NavigationPage Icon="cards_icon.png">
             <x:Arguments>
                 <cards:CardsPage/>
             </x:Arguments>
         </NavigationPage>
 
-        <NavigationPage Title="QR">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="3"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Icon="qr_icon.png">
             <x:Arguments>
                 <views:AboutPage />
             </x:Arguments>
         </NavigationPage>
 
-        <NavigationPage Title="Диалоги">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="4"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Icon="message_icon.png">
             <x:Arguments>
                 <dialogs:DialogsPage />
             </x:Arguments>
         </NavigationPage>
 
-        <NavigationPage Title="Уведомления">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="5"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Icon="profile_icon.png">
             <x:Arguments>
                 <views:AboutPage />
             </x:Arguments>

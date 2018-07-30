@@ -52,6 +52,10 @@ namespace XamarinProjectSimple.Controls
             BorderColor = Color.Transparent;
 
             Content = _canvasView;
+
+            HorizontalOptions = LayoutOptions.Fill;
+            VerticalOptions = LayoutOptions.Fill;
+
             _canvasView.PaintSurface += CanvasViewOnPaintSurface;
         }
 
@@ -71,7 +75,7 @@ namespace XamarinProjectSimple.Controls
 
             if (string.IsNullOrEmpty(ResourceId))
                 return;
-
+            
             using (Stream stream = GetType().Assembly.GetManifestResourceStream(ResourceId))
             {
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -83,6 +87,7 @@ namespace XamarinProjectSimple.Controls
                 canvas.Translate(info.Width / 2f, info.Height / 2f);
 
                 SKRect bounds = svg.ViewBox;
+                
                 float xRatio = info.Width / bounds.Width;
                 float yRatio = info.Height / bounds.Height;
 

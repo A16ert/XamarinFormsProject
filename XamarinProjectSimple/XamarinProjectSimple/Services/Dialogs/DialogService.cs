@@ -24,11 +24,9 @@ namespace XamarinProjectSimple.Services.Dialogs
         {
             return new ObservableCollection<MessageModel>
             {
-                new MessageModel(){ Text = "Item 1", IsMyMessage = true},
-                new MessageModel(){ Text = "Item 2"},
-                new MessageModel(){ Text = "Item 3"},
-                new MessageModel(){ Text = "Item 4", IsMyMessage = true},
-                new MessageModel(){ Text = "Item 5" }
+                new MessageModel(){ Text = "Здравствуйте, магазин!\nПомогите пожалуйста!", IsMyMessage = true},
+                new MessageModel(){ Text = "Здравствуйте, покупатель!" },
+                new MessageModel(){ Text = "Какая у меня скидка???", IsMyMessage = true}
             };
         }
 

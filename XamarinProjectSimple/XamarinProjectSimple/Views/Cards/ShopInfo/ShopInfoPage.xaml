@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             xmlns:labels="clr-namespace:XamarinProjectSimple.Controls.labels"
+             x:Class="XamarinProjectSimple.Views.Cards.ShopInfo.ShopInfoPage" Title="Информация"
+             BackgroundColor="{StaticResource BackgroundGray}">
+    <ContentPage.Resources>
+        <Style TargetType="BoxView">
+            <Setter Property="HeightRequest" Value="1"/>
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundGray}"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="280*"/>
+            </Grid.RowDefinitions>
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="29*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="29*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Margin="10, 0" VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="230*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Контакты" VerticalOptions="Center" TextColor="Black"/>
+                    <controls:Icon ResourceId="XamarinProjectSimple.Resources.Pointer.right_arrow_icon.svg" Grid.Column="1"/>
+                </Grid>
+                <BoxView Grid.Row="1" Margin="10, 0"/>
+                <labels:UnderlineLabel VerticalOptions="Center" Grid.Row="2" Text="example.com" TextColor="Black" Margin="10, 0, 0,0"/>
+                <BoxView Grid.Row="3" Margin="10, 0"/>
+                <Grid Margin="10, 0" Grid.Row="4" VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="230*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalOptions="Center" Text="На карте" TextColor="Black"/>
+                    <controls:Icon ResourceId="XamarinProjectSimple.Resources.Pointer.right_arrow_icon.svg" Grid.Column="1"/>
+                </Grid>
+                <BoxView Grid.Row="5" Margin="10, 0"/>
+            </Grid>
+            <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand" Margin="10">
+                <Label Text="Mergen - сеть магазинов галантереи и аксессуаров. Здесь вы найдете много модных и трендовых аксессуаров для себя и на подарок близким."
+                       HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start"
+                       
+                       LineBreakMode="WordWrap" TextColor="Black"/>
+                <labels:UnderlineLabel Text="Отзывы" TextColor="Gray" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

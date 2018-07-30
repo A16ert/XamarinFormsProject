@@ -17,6 +17,8 @@ namespace XamarinProjectSimple.Views.Shop
         public ShopsPage()
         {
             InitializeComponent();
+
+            //menuToolBar.Icon = 
             
         }
 
@@ -33,6 +35,11 @@ namespace XamarinProjectSimple.Views.Shop
         private void ShopFooterBtn_Clicked(object sender, EventArgs e)
         {
 
+        }
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CategoryesListPage());
         }
     }
 }

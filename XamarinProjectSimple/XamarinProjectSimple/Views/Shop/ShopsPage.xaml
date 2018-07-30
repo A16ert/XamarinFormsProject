@@ -5,8 +5,12 @@
              xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:labels="clr-namespace:XamarinProjectSimple.Controls.labels"
              xmlns:frames="clr-namespace:XamarinProjectSimple.Controls.Frames"
+             xmlns:ext="clr-namespace:XamarinProjectSimple.Helpers.Svg"
              Title="{Binding Title}"
              x:Class="XamarinProjectSimple.Views.Shop.ShopsPage">
+    <ContentPage.ToolbarItems> 
+        <ToolbarItem x:Name="menuToolBar" Text="M" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.BindingContext>
         <vm:ShopsViewModel/>
     </ContentPage.BindingContext>

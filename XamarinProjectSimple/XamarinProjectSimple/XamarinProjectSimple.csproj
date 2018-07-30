@@ -10,7 +10,9 @@
     <None Remove="Resources\Auth\vk_logo.svg" />
     <None Remove="Resources\barcode.svg" />
     <None Remove="Resources\black.png" />
+    <None Remove="Resources\Menu\menu_icon.svg" />
     <None Remove="Resources\Pointer\right_arrow_icon.svg" />
+    <None Remove="Resources\Pointer\SendMessage.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +21,9 @@
     <EmbeddedResource Include="Resources\Auth\vk_logo.svg" />
     <EmbeddedResource Include="Resources\barcode.svg" />
     <EmbeddedResource Include="Resources\black.png" />
+    <EmbeddedResource Include="Resources\Menu\menu_icon.svg" />
     <EmbeddedResource Include="Resources\Pointer\right_arrow_icon.svg" />
+    <EmbeddedResource Include="Resources\Pointer\SendMessage.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -72,10 +76,19 @@
     <EmbeddedResource Update="Views\Cards\CardsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Cards\ShopInfo\ReviewsListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Cards\ShopInfo\ShopInfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Dialogs\DialogDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Dialogs\DialogsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Shop\CategoryesListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Shop\ShopsPage.xaml">
