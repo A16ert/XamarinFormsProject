@@ -3601,6 +3601,12 @@ namespace XamarinProjectSimple.Droid
 			global::XLabs.Forms.Resource.Styleable.ViewStubCompat_android_layout = global::XamarinProjectSimple.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::XLabs.Platform.Resource.String.ApplicationName = global::XamarinProjectSimple.Droid.Resource.String.ApplicationName;
 			global::XLabs.Platform.Resource.String.Hello = global::XamarinProjectSimple.Droid.Resource.String.Hello;
+			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscanneractivitylayout = global::XamarinProjectSimple.Droid.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscannerfragmentlayout = global::XamarinProjectSimple.Droid.Resource.Layout.zxingscannerfragmentlayout;
+			global::ZXing.Net.Mobile.Forms.Android.Resource.String.library_name = global::XamarinProjectSimple.Droid.Resource.String.library_name;
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::XamarinProjectSimple.Droid.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::XamarinProjectSimple.Droid.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::XamarinProjectSimple.Droid.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Animation
@@ -6667,6 +6673,9 @@ namespace XamarinProjectSimple.Droid
 			// aapt resource value: 0x7f0c007a
 			public const int container = 2131492986;
 			
+			// aapt resource value: 0x7f0c00c0
+			public const int contentFrame = 2131493056;
+			
 			// aapt resource value: 0x7f0c0050
 			public const int contentPanel = 2131492944;
 			
@@ -6790,8 +6799,8 @@ namespace XamarinProjectSimple.Droid
 			// aapt resource value: 0x7f0c004a
 			public const int list_item = 2131492938;
 			
-			// aapt resource value: 0x7f0c00c1
-			public const int masked = 2131493057;
+			// aapt resource value: 0x7f0c00c2
+			public const int masked = 2131493058;
 			
 			// aapt resource value: 0x7f0c00ad
 			public const int media_actions = 2131493037;
@@ -7117,8 +7126,8 @@ namespace XamarinProjectSimple.Droid
 			// aapt resource value: 0x7f0c000e
 			public const int view_offset_helper = 2131492878;
 			
-			// aapt resource value: 0x7f0c00c0
-			public const int visible = 2131493056;
+			// aapt resource value: 0x7f0c00c1
+			public const int visible = 2131493057;
 			
 			// aapt resource value: 0x7f0c009f
 			public const int volume_item_container = 2131493023;
@@ -7438,6 +7447,12 @@ namespace XamarinProjectSimple.Droid
 			// aapt resource value: 0x7f04004a
 			public const int week = 2130968650;
 			
+			// aapt resource value: 0x7f04004b
+			public const int zxingscanneractivitylayout = 2130968651;
+			
+			// aapt resource value: 0x7f04004c
+			public const int zxingscannerfragmentlayout = 2130968652;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -7470,11 +7485,11 @@ namespace XamarinProjectSimple.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f080001
-			public const int ApplicationName = 2131230721;
+			// aapt resource value: 0x7f080002
+			public const int ApplicationName = 2131230722;
 			
-			// aapt resource value: 0x7f080000
-			public const int Hello = 2131230720;
+			// aapt resource value: 0x7f080001
+			public const int Hello = 2131230721;
 			
 			// aapt resource value: 0x7f08001c
 			public const int abc_action_bar_home_description = 2131230748;
@@ -7587,8 +7602,8 @@ namespace XamarinProjectSimple.Droid
 			// aapt resource value: 0x7f080004
 			public const int invalid_date = 2131230724;
 			
-			// aapt resource value: 0x7f080002
-			public const int library_name = 2131230722;
+			// aapt resource value: 0x7f080000
+			public const int library_name = 2131230720;
 			
 			// aapt resource value: 0x7f080005
 			public const int month_name_format = 2131230725;

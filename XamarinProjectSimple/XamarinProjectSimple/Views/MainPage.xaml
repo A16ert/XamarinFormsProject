@@ -5,7 +5,7 @@
             xmlns:shop="clr-namespace:XamarinProjectSimple.Views.Shop"
             xmlns:dialogs="clr-namespace:XamarinProjectSimple.Views.Dialogs"
             xmlns:cards="clr-namespace:XamarinProjectSimple.Views.Cards"
-            x:Class="XamarinProjectSimple.Views.MainPage">
+            x:Class="XamarinProjectSimple.Views.MainPage" CurrentPageChanged="TabbedPage_CurrentPageChanged">
     <TabbedPage.Children>
         <NavigationPage Icon="shop_icon.png">
             <x:Arguments>
@@ -21,7 +21,7 @@
 
         <NavigationPage Icon="qr_icon.png">
             <x:Arguments>
-                <views:AboutPage />
+                <views:AboutPage BackgroundColor="Black"/>
             </x:Arguments>
         </NavigationPage>
 

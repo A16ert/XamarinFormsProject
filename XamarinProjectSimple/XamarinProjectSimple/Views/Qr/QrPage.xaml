@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:labels="clr-namespace:XamarinProjectSimple.Controls.labels"
+             Title="Фото QR-кода"
+             x:Class="XamarinProjectSimple.Views.Qr.QrPage">
+    <ContentPage.Content>
+        <Grid x:Name="mainGrid" ColumnSpacing="0" RowSpacing="0">
+            <Grid.Resources>
+                <Style TargetType="Label" x:Key="whiteText">
+                    <Setter Property="TextColor" Value="White"/>
+                </Style>
+                <Style TargetType="Label" x:Key="infoText" BasedOn="{StaticResource whiteText}">
+                    <Setter Property="FontSize" Value="17"/>
+                </Style>
+                <Style TargetType="Label" x:Key="successText" BasedOn="{StaticResource whiteText}">
+                    <Setter Property="FontSize" Value="22"/>
+                </Style>
+                <Style TargetType="BoxView">
+                    <Setter Property="Opacity" Value="0.5"/>
+                    <Setter Property="BackgroundColor" Value="Black"/>
+                    <Setter Property="Color" Value="Black"/>
+                </Style>
+            </Grid.Resources>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="320*"/>
+                <RowDefinition Height="490*"/>
+                <RowDefinition Height="420*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="128*"/>
+                <ColumnDefinition Width="505*"/>
+                <ColumnDefinition Width="128*"/>
+            </Grid.ColumnDefinitions>
+            
+            <forms:ZXingScannerView x:Name="scannerView" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
+            
+            <BoxView Grid.ColumnSpan="3"/>
+            
+            <BoxView Grid.Column="1" Grid.Row="2"/>
+
+            <BoxView Grid.Row="1" Grid.Column="0" Grid.RowSpan="2"/>
+            <BoxView Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"/>
+            
+            <Label Text="Отсканируй QR-код фирмы,чтобы получить скидку" LineBreakMode="WordWrap"
+                   Style="{StaticResource infoText}"
+                   Grid.ColumnSpan="3" Margin="15, 0"
+                   XAlign="Center"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                   HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            
+            <StackLayout Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+                <labels:UnderlineLabel Style="{StaticResource infoText}" Text="Подробнее"
+                                       HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"
+                                       TextColor="#007aff" Grid.Row="2" Margin="0,0,0,20"/>
+
+                <StackLayout x:Name="successStack" Opacity="0">       
+                    <Label Style="{StaticResource successText}" Text="Вы стали клиентом"
+                           HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                    <Label Style="{StaticResource successText}" Text="Скидка Активирована"
+                           HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+
+
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
