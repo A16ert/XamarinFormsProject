@@ -43,7 +43,7 @@ namespace XamarinProjectSimple
 
         public static void GoToRoot()
         {
-            CurrentApp.MainPage = new MainPage();
+            CurrentApp.MainPage =new MainPage();
         }
 
     }
