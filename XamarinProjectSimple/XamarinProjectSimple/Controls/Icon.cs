@@ -32,6 +32,12 @@ namespace XamarinProjectSimple.Controls
                                                                                            Color.Transparent,
                                                                                            propertyChanged: RedrawCanvas);
 
+        public static readonly BindableProperty StretchProperty = BindableProperty.Create(nameof(Stretch),
+                                                                                           typeof(bool),
+                                                                                           typeof(Icon),
+                                                                                           false,
+                                                                                           propertyChanged: RedrawCanvas);
+
         public string ResourceId
         {
             get => (string)GetValue(IconFilePathProperty);
@@ -52,6 +58,12 @@ namespace XamarinProjectSimple.Controls
             set => SetValue(IconColorProperty, value);
         }
 
+        public bool Stretch
+        {
+            get => (bool)GetValue(StretchProperty);
+
+            set => SetValue(StretchProperty, value);
+        }
         private readonly SKCanvasView _canvasView = new SKCanvasView();
 
         public Icon() : base()
@@ -106,7 +118,9 @@ namespace XamarinProjectSimple.Controls
 
                 float ratio = Math.Min(xRatio, yRatio);
 
-                canvas.Scale(ratio);
+                if (Stretch) canvas.Scale(xRatio, yRatio);
+                else canvas.Scale(ratio);
+
                 canvas.Translate(-bounds.MidX, -bounds.MidY);
                 canvas.RotateDegrees(RotationRadius, bounds.MidX, bounds.MidY);
 
