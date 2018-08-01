@@ -59,6 +59,22 @@ namespace XamarinProjectSimple.Views.Qr
             scannerView.IsScanning = false;
 
             base.OnDisappearing();
+
+            //var masterPage = this.Parent as TabbedPage;
+            //masterPage.CurrentPage = masterPage.Children[0];
         }
+
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    Navigation.PushModalAsync(new NavigationPage(new QrPage()));
+        //}
+
+        //protected override void OnDisappearing()
+        //{
+        //    base.OnDisappearing();
+        //    // move on a different tab to avoid infinite loop when back button is pressed
+            
+        //}
     }
 }
