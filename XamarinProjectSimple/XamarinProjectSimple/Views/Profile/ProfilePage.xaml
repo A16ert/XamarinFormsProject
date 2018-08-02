@@ -2,13 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sep="clr-namespace:XamarinProjectSimple.Controls.Separator"
-             xmlns:local="clr-namespace:XamarinProjectSimple.Resources"
+             xmlns:local="clr-namespace:XamarinProjectSimple"
              xmlns:frames="clr-namespace:XamarinProjectSimple.Controls.Frames"
              xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
              xmlns:profileControl="clr-namespace:XamarinProjectSimple.Views.Profile.Controls"
              xmlns:buttons="clr-namespace:XamarinProjectSimple.Controls.Buttons"
              xmlns:list="clr-namespace:XamarinProjectSimple.Controls.List"
              xmlns:tabbleviewcells="clr-namespace:XamarinProjectSimple.Controls.List.TabbleViewCells"
+             xmlns:helpers="clr-namespace:XamarinProjectSimple.Helpers"
              x:Class="XamarinProjectSimple.Views.Profile.ProfilePage"
              BackgroundColor="{StaticResource BackgroundGray}">
     <ContentPage.Resources>
@@ -26,7 +27,7 @@
                         <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
 
-                    <Image Source="{local }"/>
+                    <Image Source="{helpers:ImageResource Source=XamarinProjectSimple.Resources.Profile.avatar_template.png}" BackgroundColor="#aaaaaa"/>
 
                     <Grid Grid.Row="1" Margin="16, 0">
                         <Grid.RowDefinitions>
@@ -71,10 +72,10 @@
                     <profileControl:ProfileInfoView Grid.Row="2" Margin="10, 0"
                                                     InfoName="Город" InfoValue="Казань"/>
                 </Grid>
-                <list:ColoredTableView RowHeight="60" BackgroundColor="White" Margin="0,25,0,0">
+                <list:ColoredTableView x:Name="tableView" RowHeight="60" BackgroundColor="White" Margin="0,25,0,0" HeightRequest="490">
                     <TableView.Root>
                         <TableRoot>
-                            <TableSection>
+                            <TableSection x:Name="tableSection">
                                 <ViewCell>
                                     <buttons:LabelWithArrow Margin="16, 0" Text="Push-уведомления"/>
                                 </ViewCell>
@@ -105,8 +106,8 @@
                     </TableView.Root>
                 </list:ColoredTableView>
                 
-                <Button Text="Удалить профиль" Style="{StaticResource buttonWithBorders}" BorderColor="Red" TextColor="Red"
-                        Margin="16, 8"/>
+                <!--<Button Text="Удалить профиль" Style="{StaticResource buttonWithBorders}" BorderColor="Red" TextColor="Red"
+                        Margin="16, 8"/>-->
                 
             </StackLayout>
 
