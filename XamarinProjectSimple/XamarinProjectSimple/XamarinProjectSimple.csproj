@@ -13,12 +13,14 @@
     <None Remove="Resources\Menu\menu_icon.svg" />
     <None Remove="Resources\Pointer\right_arrow_icon.svg" />
     <None Remove="Resources\Pointer\SendMessage.svg" />
+    <None Remove="Resources\Profile\avatar_template.png" />
     <None Remove="Resources\Qr\QrFrame.svg" />
     <None Remove="Resources\Rating\like.svg" />
     <None Remove="Resources\Rating\UnLike.svg" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Profile\avatar_template.png" />
     <EmbeddedResource Include="Resources\Qr\QrFrame.svg" />
     <EmbeddedResource Include="Resources\Rating\like.svg" />
   </ItemGroup>
@@ -51,6 +53,9 @@
     <EmbeddedResource Update="Controls\BarCodeExpander.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Buttons\LabelWithArrow.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Controls\CardInfoExpander.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -60,10 +65,16 @@
     <EmbeddedResource Update="Controls\DatePicker\CustomDatePicker.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Controls\List\TabbleViewCells\SwitchCellView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Controls\Purshase.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\PurshaseHistoryExpander.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Separator\BottomLine.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\ToggleButton.xaml">
@@ -97,6 +108,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Dialogs\DialogsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Profile\Controls\ProfileInfoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Profile\ProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Qr\QrPage.xaml">

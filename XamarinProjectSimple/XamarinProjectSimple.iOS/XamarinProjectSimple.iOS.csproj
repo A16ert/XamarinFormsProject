@@ -71,6 +71,7 @@
     <Compile Include="Renders\ImageRenderers\AvatarCircleRenderer.cs" />
     <Compile Include="Renders\LabelRenders\MultiLineRenderer.cs" />
     <Compile Include="Renders\LabelRenders\UnderlineLabelRender.cs" />
+    <Compile Include="Renders\ListRenderers\ColoredTableViewRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>

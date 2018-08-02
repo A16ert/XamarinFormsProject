@@ -1,15 +1,12 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XamarinProjectSimple.Views;
 using Xamarin.Forms.Xaml;
-using XamarinProjectSimple.Views.Authorization;
 using XamarinProjectSimple.Services.Authorization;
-using XamarinProjectSimple.Views.Cards;
 
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XamarinProjectSimple
 {
-	public partial class App : Application
+    public partial class App : Application
 	{
         public static Application CurrentApp { get; private set; }
 
@@ -23,7 +20,7 @@ namespace XamarinProjectSimple
 
             if (auth.IsAuthorized) GoToRoot();
 
-            else MainPage = new NavigationPage(new AuthPage());
+            else MainPage = new NavigationPage(new Views.Profile.ProfilePage());
         }
 
 		protected override void OnStart ()

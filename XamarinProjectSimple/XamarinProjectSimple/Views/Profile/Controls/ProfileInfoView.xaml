@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sep="clr-namespace:XamarinProjectSimple.Controls.Separator"
+             x:Class="XamarinProjectSimple.Views.Profile.Controls.ProfileInfoView"
+             x:Name="profileInfoView">
+    <ContentView.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1"/>
+            </Grid.RowDefinitions>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Start">
+                <Label Text="{Binding Source={x:Reference profileInfoView}, Path=InfoName}"
+                         VerticalOptions="Center" YAlign="End"
+                         VerticalTextAlignment="Start"
+                         FontFamily="{StaticResource SFUIText-Medium}" FontSize="15"/>
+                <Label Text="{Binding Source={x:Reference profileInfoView}, Path=InfoValue}" VerticalOptions="Center"
+                           VerticalTextAlignment="End" YAlign="Start"
+                           FontFamily="{StaticResource SFUIText-Regular}" FontSize="13"/>
+            </StackLayout>
+
+            <sep:BottomLine Grid.Row="1"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

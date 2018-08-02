@@ -84,6 +84,7 @@
     <Compile Include="Renders\ImageRenders\AvatarCircleRenderer.cs" />
     <Compile Include="Renders\LabelRenders\MultiLineRenderer.cs" />
     <Compile Include="Renders\LabelRenders\UnderlineLabelRender.cs" />
+    <Compile Include="Renders\ListRenders\ColoredTableViewRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:separator="clr-namespace:XamarinProjectSimple.Controls.Separator"
+             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
+             x:Name="mainView"
+             x:Class="XamarinProjectSimple.Controls.Buttons.LabelWithArrow">
+  <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1"/>
+            </Grid.RowDefinitions>
+
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                         Orientation="Horizontal">
+                <Label Text="{Binding Source={x:Reference mainView}, Path=Text}"
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"
+                       FontFamily="{StaticResource SFUIText-Medium}" FontSize="15" TextColor="Black"/>
+                
+                <controls:Icon ResourceId="XamarinProjectSimple.Resources.Pointer.right_arrow_icon.svg"
+                                           HeightRequest="15" WidthRequest="10"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <separator:BottomLine Grid.Row="1"/>
+
+            
+        </Grid>
+  </ContentView.Content>
+</ContentView>
