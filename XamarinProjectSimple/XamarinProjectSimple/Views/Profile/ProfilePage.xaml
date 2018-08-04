@@ -55,7 +55,8 @@
                     </Grid>
                 </Grid>
 
-                <Label Text="ИНФОРМАЦИЯ ПРОФИЛЯ" HeightRequest="41" HorizontalOptions="Start" VerticalOptions="End"
+                <Label Text="ИНФОРМАЦИЯ ПРОФИЛЯ" HeightRequest="41" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"
+                       YAlign="End"
                        Margin="16, 0"/>
                 
                 <!--info-->
@@ -72,7 +73,9 @@
                     <profileControl:ProfileInfoView Grid.Row="2" Margin="10, 0"
                                                     InfoName="Город" InfoValue="Казань"/>
                 </Grid>
-                <list:ColoredTableView x:Name="tableView" RowHeight="60" BackgroundColor="White" Margin="0,25,0,0" HeightRequest="490">
+                <list:ColoredTableView x:Name="tableView" RowHeight="60" BackgroundColor="White" Margin="0,25,0,0"
+                                       HeightRequest="495"
+                                       VerticalOptions="CenterAndExpand">
                     <TableView.Root>
                         <TableRoot>
                             <TableSection x:Name="tableSection">
@@ -106,8 +109,8 @@
                     </TableView.Root>
                 </list:ColoredTableView>
                 
-                <!--<Button Text="Удалить профиль" Style="{StaticResource buttonWithBorders}" BorderColor="Red" TextColor="Red"
-                        Margin="16, 8"/>-->
+                <Button Text="Удалить профиль" Style="{StaticResource buttonWithBorders}" BorderColor="Red" TextColor="Red"
+                        Margin="16, 8"/>
                 
             </StackLayout>
 
