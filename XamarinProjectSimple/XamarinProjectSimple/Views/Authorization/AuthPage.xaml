@@ -3,8 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:XamarinProjectSimple.ViewModels.Authorization"
              xmlns:customentrys="clr-namespace:XamarinProjectSimple.Controls.CustomEntrys"
-             xmlns:buttons="clr-namespace:XamarinProjectSimple.Controls.Buttons"
-             xmlns:controls="clr-namespace:XamarinProjectSimple.Controls"
              xmlns:labels="clr-namespace:XamarinProjectSimple.Controls.labels"
              x:Class="XamarinProjectSimple.Views.Authorization.AuthPage"
              Title="Вход">
